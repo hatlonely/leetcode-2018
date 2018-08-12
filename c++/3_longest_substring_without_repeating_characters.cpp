@@ -4,7 +4,7 @@
 
 class Solution {
    public:
-    int lengthOfLongestSubstring(std::string str) {
+    int lengthOfLongestSubstring(const std::string& str) {
         std::bitset<256> bs;
 
         int idx1 = 0;
