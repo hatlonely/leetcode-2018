@@ -9,11 +9,11 @@ class Solution {
         std::sort(nums.begin(), nums.end());
         int rsum  = 0;
         int rdiff = std::numeric_limits<int>::max();
-        for (int i = 1; i < nums.size() - 1; i++) {
-            size_t idx1 = 0;
+        for (int i = 0; i < nums.size() - 1; i++) {
+            size_t idx1 = i + 1;
             size_t idx2 = nums.size() - 1;
-            while (idx1 < i && idx2 > i) {
-                auto sum = nums[idx1] + nums[i] + nums[idx2];
+            while (idx1 < idx2) {
+                auto sum = nums[i] + nums[idx1] + nums[idx2];
                 if (sum < target) {
                     idx1++;
                 } else if (sum > target) {
