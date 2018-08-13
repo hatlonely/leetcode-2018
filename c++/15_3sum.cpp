@@ -14,8 +14,8 @@ class Solution {
 
         size_t n = nums.size();
         for (size_t i = 0; i < n - 2; i++) {
-            while (i > 0 && nums[i] == nums[i - 1]) {
-                i++;
+            if (i > 0 && nums[i] == nums[i - 1]) {
+                continue;
             }
             size_t idx1 = i + 1;
             size_t idx2 = n - 1;
