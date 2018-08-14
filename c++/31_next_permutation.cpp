@@ -40,6 +40,4 @@ TEST(testNextPermutation, case2) {
     auto     nums = std::vector<int>({0, 1, 1, 0, 4, 4});
     solution.nextPermutation(nums);
     EXPECT_EQ(nums, std::vector<int>({0, 1, 1, 4, 0, 4}));
-
-    // []
 }
