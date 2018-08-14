@@ -56,15 +56,15 @@ int main(int argc, char* argv[]) {
 
 TEST(testSubstringWithConcatenationOfAllWords, case1) {
     Solution solution;
-    // EXPECT_EQ(
-    //     solution.findSubstring("barfoothefoobarman", {"foo", "bar"}),
-    //     std::vector<int>({0, 9}));
-    // EXPECT_EQ(
-    //     solution.findSubstring("wordgoodstudentgoodword", {"word", "student"}),
-    //     std::vector<int>({}));
-    // EXPECT_EQ(
-    //     solution.findSubstring("", {"a"}),
-    //     std::vector<int>({}));
+    EXPECT_EQ(
+        solution.findSubstring("barfoothefoobarman", {"foo", "bar"}),
+        std::vector<int>({0, 9}));
+    EXPECT_EQ(
+        solution.findSubstring("wordgoodstudentgoodword", {"word", "student"}),
+        std::vector<int>({}));
+    EXPECT_EQ(
+        solution.findSubstring("", {"a"}),
+        std::vector<int>({}));
     EXPECT_EQ(
         solution.findSubstring("wordgoodgoodgoodbestword", {"word", "good", "best", "good"}),
         std::vector<int>({8}));
