@@ -5,13 +5,13 @@
 class Solution {
    public:
     std::vector<int> twoSum(std::vector<int>& nums, int target) {
-        std::unordered_map<int, int> num_idx_map;
+        std::unordered_map<int, int> numIdxMap;
         for (int i = 0; i < nums.size(); i++) {
             auto num = nums[i];
-            if (num_idx_map.count(target - num) > 0) {
-                return std::vector<int>({num_idx_map[target - num], i});
+            if (numIdxMap.count(target - num) > 0) {
+                return std::vector<int>({numIdxMap[target - num], i});
             }
-            num_idx_map[num] = i;
+            numIdxMap[num] = i;
         }
         return std::vector<int>({-1, -1});
     }
