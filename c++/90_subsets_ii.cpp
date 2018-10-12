@@ -4,25 +4,11 @@
 #include <vector>
 
 class Solution {
-    void subsetsWithDupRecursive(std::vector<std::vector<int>>& subsets, int num, int times) {
-        int len = subsets.size();
-        for (int i = 0; i < times; i++) {
-            for (int i = 0; i < len; i++) {
-                subsets.emplace_back(subsets[i]);
-                subsets[i].push_back(num);
-            }
-        }
-    }
-
    public:
     std::vector<std::vector<int>> subsetsWithDup(const std::vector<int>& nums) {
         std::map<int, int> numTimesMap;
         for (auto& num : nums) {
-            if (numTimesMap.count(num) == 0) {
-                numTimesMap[num] = 1;
-            } else {
-                numTimesMap[num]++;
-            }
+            numTimesMap[num]++;
         }
         int n = 0;
         for (auto& numTimes : numTimesMap) {
@@ -31,7 +17,13 @@ class Solution {
         std::vector<std::vector<int>> subsets = {{}};
         subsets.reserve(n);
         for (auto& numTimes : numTimesMap) {
-            subsetsWithDupRecursive(subsets, numTimes.first, numTimes.second);
+            int len = subsets.size();
+            for (int i = 0; i < numTimes.second; i++) {
+                for (int i = 0; i < len; i++) {
+                    subsets.emplace_back(subsets[i]);
+                    subsets[i].push_back(numTimes.first);
+                }
+            }
         }
 
         return subsets;
