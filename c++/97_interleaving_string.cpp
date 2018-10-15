@@ -4,10 +4,7 @@
 
 class Solution {
    public:
-    bool isInterleave(
-        const std::string& s1,
-        const std::string& s2,
-        const std::string& s3) {
+    bool isInterleave(const std::string& s1, const std::string& s2, const std::string& s3) {
         int m = s1.length();
         int n = s2.length();
         if (m + n != s3.length()) {
