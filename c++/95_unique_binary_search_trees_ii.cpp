@@ -45,16 +45,16 @@ TEST(test, case1) {
     Solution solution;
     auto     trees = solution.generateTrees(3);
     auto     nodes = std::vector<TreeNode*>({
-        CreateTree({1, $, 2, $, 3}),
-        CreateTree({1, $, 3, 2}),
-        CreateTree({2, 1, 3}),
-        CreateTree({3, 1, $, $, 2}),
-        CreateTree({3, 2, $, 1}),
+        NewTree({1, $, 2, $, 3}),
+        NewTree({1, $, 3, 2}),
+        NewTree({2, 1, 3}),
+        NewTree({3, 1, $, $, 2}),
+        NewTree({3, 2, $, 1}),
     });
     EXPECT_EQ(trees.size(), nodes.size());
     for (int i = 0; i < trees.size(); i++) {
-        ShowTree(trees[i]);
-        EXPECT_TRUE(EqualsTree(trees[i], nodes[i]));
+        TreeShow(trees[i]);
+        EXPECT_TRUE(TreeEqual(trees[i], nodes[i]));
     }
 }
 
