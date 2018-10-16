@@ -31,5 +31,5 @@ int main(int argc, char* argv[]) {
 
 TEST(test, case1) {
     Solution solution;
-    EXPECT_EQ(solution.inorderTraversal(CreateTree({1, $, 2, 3})), std::vector<int>({1, 3, 2}));
+    EXPECT_EQ(solution.inorderTraversal(NewTree({1, $, 2, 3})), std::vector<int>({1, 3, 2}));
 }
