@@ -13,7 +13,7 @@ struct TreeNode {
     TreeNode(int x) : val(x), left(nullptr), right(nullptr) {}
 };
 
-TreeNode *CreateTree(std::initializer_list<int> li) {
+TreeNode *NewTree(std::initializer_list<int> li) {
     TreeNode  prev(0);
     TreeNode *node = &prev;
 
@@ -49,7 +49,7 @@ void DestroyTree(TreeNode *node) {
     }
 }
 
-void ShowTree(TreeNode *node) {
+void TreeShow(TreeNode *node) {
     std::queue<TreeNode *> nodes;
     nodes.push(node);
     std::cout << node->val << ", ";
@@ -72,7 +72,7 @@ void ShowTree(TreeNode *node) {
     std::cout << std::endl;
 }
 
-bool EqualsTree(TreeNode *node1, TreeNode *node2) {
+bool TreeEqual(TreeNode *node1, TreeNode *node2) {
     if (node1 == nullptr) {
         return node2 == nullptr;
     }
@@ -80,6 +80,6 @@ bool EqualsTree(TreeNode *node1, TreeNode *node2) {
         return false;
     }
     return node1->val == node2->val &&
-           EqualsTree(node1->left, node2->left) &&
-           EqualsTree(node1->right, node2->right);
+           TreeEqual(node1->left, node2->left) &&
+           TreeEqual(node1->right, node2->right);
 }
