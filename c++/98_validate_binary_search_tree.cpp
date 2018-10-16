@@ -52,9 +52,9 @@ int main(int argc, char* argv[]) {
 
 TEST(test, case1) {
     Solution solution;
-    EXPECT_FALSE(solution.isValidBST(CreateTree({5, 1, 4, $, $, 3, 6})));
-    EXPECT_TRUE(solution.isValidBST(CreateTree({2, 1, 3})));
-    EXPECT_TRUE(solution.isValidBST(CreateTree({0, $, 1})));
-    EXPECT_FALSE(solution.isValidBST(CreateTree({1, 1})));
-    EXPECT_FALSE(solution.isValidBST(CreateTree({5, 14, $, 1})));
+    EXPECT_FALSE(solution.isValidBST(NewTree({5, 1, 4, $, $, 3, 6})));
+    EXPECT_TRUE(solution.isValidBST(NewTree({2, 1, 3})));
+    EXPECT_TRUE(solution.isValidBST(NewTree({0, $, 1})));
+    EXPECT_FALSE(solution.isValidBST(NewTree({1, 1})));
+    EXPECT_FALSE(solution.isValidBST(NewTree({5, 14, $, 1})));
 }
