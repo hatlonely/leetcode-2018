@@ -1,47 +1,28 @@
 #include <gtest/gtest.h>
 #include <iostream>
+#include <limits>
 #include "treenode.hpp"
 
 class Solution {
-    void isValidBSTRecursive(int& min, int& max, bool& isBST, TreeNode* root) {
-        min = root->val;
-        max = root->val;
-        if (root->left == nullptr && root->right == nullptr) {
-            min   = root->val;
-            max   = root->val;
-            isBST = true;
-            return;
+    bool isValidBSTRecursive(TreeNode* root, long min, long max) {
+        if (root == nullptr) {
+            return true;
         }
-        int  lmin, lmax, rmin, rmax;
-        bool lisBST, risBST;
-        if (root->left != nullptr) {
-            isValidBSTRecursive(lmin, lmax, lisBST, root->left);
-            if (!lisBST || lmax >= root->val) {
-                isBST = false;
-                return;
-            }
-            min = lmin;
+        if (root->val >= max || root->val <= min) {
+            return false;
         }
-        if (root->right != nullptr) {
-            isValidBSTRecursive(rmin, rmax, risBST, root->right);
-            if (!risBST || rmin <= root->val) {
-                isBST = false;
-                return;
-            }
-            max = rmax;
+        if (!isValidBSTRecursive(root->left, min, root->val)) {
+            return false;
         }
-        isBST = true;
+        if (!isValidBSTRecursive(root->right, root->val, max)) {
+            return false;
+        }
+        return true;
     }
 
    public:
     bool isValidBST(TreeNode* root) {
-        if (root == nullptr) {
-            return true;
-        }
-        int  min, max;
-        bool isBST;
-        isValidBSTRecursive(min, max, isBST, root);
-        return isBST;
+        return isValidBSTRecursive(root, long(std::numeric_limits<int>::min()) - 1, long(std::numeric_limits<int>::max()) + 1);
     }
 };
 
