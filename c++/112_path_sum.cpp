@@ -22,5 +22,5 @@ int main(int argc, char* argv[]) {
 
 TEST(test, case1) {
     Solution solution;
-    EXPECT_TRUE(solution.hasPathSum(NewTree({5, 4, 8, 11, $, 13, 4, 7, 2, $, $, $, $, $, 1}), 22));
+    EXPECT_TRUE(solution.hasPathSum(NewTree({5, 4, 8, 11, $, 13, 4, 7, 2, $, $, $, 1}), 22));
 }
