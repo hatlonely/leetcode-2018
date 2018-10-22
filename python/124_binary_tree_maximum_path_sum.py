@@ -27,8 +27,8 @@ class Solution:
 
 if __name__ == '__main__':
     solution = Solution()
-    # print(solution.maxPathSum(NewTree([-10, 9, 20, None, None, 15, 7])), 42)
-    # print(solution.maxPathSum(NewTree([-3])), -3)
-    # print(solution.maxPathSum(NewTree([1, 2])), 3)
-    # print(solution.maxPathSum(NewTree([2, -1])), 2)
+    print(solution.maxPathSum(NewTree([-10, 9, 20, None, None, 15, 7])), 42)
+    print(solution.maxPathSum(NewTree([-3])), -3)
+    print(solution.maxPathSum(NewTree([1, 2])), 3)
+    print(solution.maxPathSum(NewTree([2, -1])), 2)
     print(solution.maxPathSum(NewTree([1, -2, 3])), 4)
