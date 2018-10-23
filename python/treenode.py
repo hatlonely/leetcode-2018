@@ -12,12 +12,12 @@ def NewTree(nums):
     isLeft = False
     for num in nums:
         if (isLeft):
-            if (num):
+            if (num is not None):
                 node.left = TreeNode(num)
                 nodes.append(node.left)
             isLeft = False
         else:
-            if (num):
+            if (num is not None):
                 node.right = TreeNode(num)
                 nodes.append(node.right)
             node = nodes[0]
