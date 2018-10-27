@@ -61,10 +61,12 @@ class Graph(object):
                 break
             nset.remove(node)
             for edge in node.edges:
-                if edge.node.value not in emap or emap[edge.node.value].distance > emap[node.value].distance + edge.distance:
-                    emap[edge.node.value] = GraphEdge(
+                v1 = node.value
+                v2 = edge.node.value
+                if v2 not in emap or emap[v2].distance > emap[v1].distance + edge.distance:
+                    emap[v2] = GraphEdge(
                         node,
-                        emap[node.value].distance + edge.distance
+                        emap[v1].distance + edge.distance
                     )
 
         for node in self.nodes:
