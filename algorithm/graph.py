@@ -56,14 +56,11 @@ class Graph(object):
                     node = n
             vset.remove(node)
             for edge in node.edges:
-                if edge.node.value not in emap:
+                if edge.node.value not in emap or emap[edge.node.value].distance > emap[node.value].distance + edge.distance:
                     emap[edge.node.value] = GraphEdge(
-                        node, emap[node.value].distance + edge.distance)
-                else:
-                    if emap[edge.node.value].distance > emap[node.value].distance + edge.distance:
-                        emap[edge.node.value].distance = emap[node.value].distance + \
-                            edge.distance
-                        emap[edge.node.value].node = node
+                        node,
+                        emap[node.value].distance + edge.distance
+                    )
 
         for node in self.nodes:
             n2 = node.value
