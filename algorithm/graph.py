@@ -42,15 +42,15 @@ class Graph(object):
         return '[' + ', '.join([str(node) for node in self.nodes]) + ']'
 
     def dijkstra(self, n1):
-        vset = set(self.nodes)
+        nset = set(self.nodes)
         emap = {}
-        vset.remove(self.vnMap[n1])
+        nset.remove(self.vnMap[n1])
         for edge in self.vnMap[n1].edges:
             emap[edge.node.value] = GraphEdge(self.vnMap[n1], edge.distance)
-        while vset:
+        while nset:
             mindistance = sys.maxsize
             node = None
-            for n in vset:
+            for n in nset:
                 if n.value not in emap:
                     continue
                 edge = emap[n.value]
@@ -59,7 +59,7 @@ class Graph(object):
                     node = n
             if node is None:
                 break
-            vset.remove(node)
+            nset.remove(node)
             for edge in node.edges:
                 if edge.node.value not in emap or emap[edge.node.value].distance > emap[node.value].distance + edge.distance:
                     emap[edge.node.value] = GraphEdge(
