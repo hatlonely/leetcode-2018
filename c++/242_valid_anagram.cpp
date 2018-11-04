@@ -2,11 +2,9 @@
 #include <iostream>
 #include <string>
 
-using namespace std;
-
 class Solution {
    public:
-    bool isAnagram(const string& s, const string& t) {
+    bool isAnagram(const std::string& s, const std::string& t) {
         if (s.length() != t.length()) {
             return false;
         }
