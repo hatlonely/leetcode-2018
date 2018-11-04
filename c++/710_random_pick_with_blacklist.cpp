@@ -6,7 +6,6 @@
 #include <vector>
 
 class Solution {
-    int                                     n;
     std::map<int, int>                      mi;
     std::uniform_int_distribution<unsigned> dis;
     std::mt19937_64                         mt;
