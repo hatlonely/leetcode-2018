@@ -47,17 +47,19 @@ def merge_sort(ia):
 
 
 def quick_sort_recursive(ia, s, e):
-    if s + 1 >= e:
+    if s >= e:
         return
+    tmp = ia[e]
     l = s
-    r = e - 1
+    r = e
     while l < r:
-        while l < r and ia[l] < ia[e]:
+        while l < r and ia[l] <= tmp:
             l += 1
-        while l < r and ia[r] >= ia[e]:
+        ia[l], ia[r] = ia[r], ia[l]
+        while l < r and ia[r] >= tmp:
             r -= 1
         ia[l], ia[r] = ia[r], ia[l]
-    ia[l], ia[e] = ia[e], ia[l]
+    ia[l] = tmp
     quick_sort_recursive(ia, s, l - 1)
     quick_sort_recursive(ia, l + 1, e)
 
@@ -68,8 +70,8 @@ def quick_sort(ia):
 
 if __name__ == '__main__':
     for sort in [bubble_sort, insert_sort, merge_sort, quick_sort]:
-        ia = [4, 2, 3, 1, 5, 9, 4, 3, 8]
-        ia = list(range(9)) + list(range(9))
+        # ia = [4, 2, 3, 1, 5, 9, 4, 3, 8]
+        ia = list(range(9)) + list(range(9)) + list(range(9))
         random.shuffle(ia)
         sort(ia)
         print(ia)
