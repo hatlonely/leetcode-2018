@@ -27,7 +27,7 @@ func findBottomLeftValue(root *TreeNode) int {
 	return val
 }
 
-func Test(t *testing.T) {
+func Test513(t *testing.T) {
 	Convey("test", t, func() {
 
 	})
