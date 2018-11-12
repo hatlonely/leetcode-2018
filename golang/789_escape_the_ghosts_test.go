@@ -26,7 +26,7 @@ func escapeGhosts(ghosts [][]int, target []int) bool {
 	return true
 }
 
-func Test(t *testing.T) {
+func Test789(t *testing.T) {
 	Convey("test", t, func() {
 
 	})
