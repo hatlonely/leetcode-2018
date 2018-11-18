@@ -22,7 +22,7 @@ func findLUSlength(a string, b string) int {
 	return len(a)
 }
 
-func Test(t *testing.T) {
+func Test521(t *testing.T) {
 	Convey("test", t, func() {
 		So(findLUSlength("aba", "cdc"), ShouldEqual, 3)
 	})
